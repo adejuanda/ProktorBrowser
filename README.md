@@ -1,34 +1,23 @@
-```markdown
-# ProktorBrowser for Linux Mint & Ubuntu (.deb)
+# ProktorBrowser untuk Linux (.deb)
 
-Porting native aplikasi resmi ProktorBrowser (Pusmenjar / Kemendikbudristek) untuk sistem operasi Linux (Linux Mint, Ubuntu, Debian, dan turunannya).
+Paket Debian untuk ProktorBrowser (Pusmenjar, Kemendikbudristek) yang dapat dipasang di Linux Mint, Ubuntu, Debian, dan turunannya. Aplikasi berjalan langsung di Linux tanpa Wine atau mesin virtual.
 
-Berjalan 100% native tanpa Wine, tanpa VirtualBox, ringan, hemat RAM, dan sudah dilengkapi icon resmi di Menu Aplikasi.
+## Unduh
 
----
+Ambil file `.deb` terbaru di halaman [Releases](../../releases).
 
-## 1. Unduh Aplikasi
+Versi saat ini: **22.7.31** (`proktorbrowser_22.7.31_amd64.deb`, arsitektur amd64)
 
-Unduh file instalasi paket Debian (.deb) versi terbaru di menu [Releases](../../releases):
+## Instalasi
 
-👉 [Download proktorbrowser_22.7.31_amd64.deb](../../releases)
+### Lewat GUI
 
----
+1. Buka folder Downloads.
+2. Klik dua kali file `.deb`, atau klik kanan lalu pilih **Buka dengan Pemasang Paket** (GDebi).
+3. Klik **Pasang Paket**.
+4. Masukkan password akun Linux Anda, lalu tunggu sampai selesai.
 
-## 2. Cara Instalasi
-
-Pilih salah satu cara di bawah ini:
-
-### Opsi A: Lewat Klik Mouse / GUI (Paling Mudah)
-1. Buka folder Downloads tempat file .deb tadi diunduh.
-2. Klik dua kali pada file `proktorbrowser_22.7.31_amd64.deb` (atau klik kanan > pilih Buka dengan Pemasang Paket / GDebi).
-3. Klik tombol Pasang Paket (Install Package).
-4. Masukkan password Linux Anda, lalu tunggu beberapa detik hingga instalasi selesai.
-
----
-
-### Opsi B: Lewat Terminal
-Buka terminal (Ctrl + Alt + T), lalu jalankan:
+### Lewat terminal
 
 ```bash
 cd ~/Downloads
@@ -36,44 +25,36 @@ sudo dpkg -i proktorbrowser_22.7.31_amd64.deb
 sudo apt-get install -f
 ```
 
----
+Perintah kedua memasang dependensi yang belum ada.
 
-## 3. Cara Menjalankan
+## Menjalankan
 
-- Buka Menu Aplikasi (Start Menu) di Linux Mint / Ubuntu Anda.
-- Cari: ProktorBrowser (sudah dilengkapi logo resmi).
-- Atau jalankan langsung dari terminal:
-  ```bash
-  proktorbrowser
-  ```
+Cari **ProktorBrowser** di menu aplikasi, atau jalankan dari terminal:
 
-Setelah aplikasi terbuka, seluruh status hardware (OS, CPU, RAM) dan Internet Connection akan tercentang hijau otomatis. Klik tombol RUN untuk masuk ke halaman login CBT Proktor.
+```bash
+proktorbrowser
+```
 
----
+Setelah terbuka, status OS, CPU, RAM, dan koneksi internet akan dicek otomatis. Jika semuanya tercentang hijau, klik **RUN** untuk masuk ke halaman login CBT Proktor.
 
-## 4. Tips Penggunaan Penting
+## Tips
 
-1. Cara Keluar dari Layar Penuh (Kiosk Mode):
-   Karena aplikasi berjalan dalam mode ujian layar penuh terkunci (kiosk), gunakan kombinasi tombol keyboard:
-   `Alt + F4 atau Alt + Tab`
+### Keluar dari layar penuh
 
-2. Tombol Sign-In Tidak Bisa Diklik / Terkunci:
-   - Pastikan ID Proktor dan Password diketik dengan benar.
-   - Setelah mengetik ID Proktor, klik di luar kolom atau tekan tombol Tab.
-   - Perhatikan tulisan "Tenant : ..." di atas tombol. Tombol Sign-In hanya akan aktif jika server Pusmendik mendeteksi jadwal ujian aktif untuk ID Proktor tersebut.
+Aplikasi berjalan dalam mode kiosk. Untuk keluar, tekan `Alt + F4` atau pindah jendela dengan `Alt + Tab`.
 
----
+### Tombol Sign-In tidak bisa diklik
 
-## 5. Cara Menghapus (Uninstall)
+- Periksa kembali ID Proktor dan password.
+- Setelah mengisi ID Proktor, tekan `Tab` atau klik di luar kolom.
+- Lihat tulisan **Tenant** di atas tombol. Sign-In hanya aktif jika server Pusmendik menemukan jadwal ujian aktif untuk ID Proktor tersebut.
 
-Jika kegiatan asesmen/ujian telah selesai dan Anda ingin mencopot aplikasi:
+## Menghapus
 
 ```bash
 sudo apt remove --purge proktorbrowser
 ```
 
----
+## Disclaimer
 
-## 6. Disclaimer
-Repositori ini ditujukan semata-mata untuk mempermudah proktor dan teknisi sekolah pengguna sistem operasi Linux dalam menjalankan tugas asesmen pendidikan tanpa mengubah logika keamanan, backend, enkripsi, maupun server resmi Kemendikbudristek.
-```
+Repositori ini hanya membantu proktor dan teknisi sekolah yang memakai Linux untuk menjalankan asesmen. Tidak ada perubahan pada logika keamanan, backend, enkripsi, maupun server resmi Kemendikbudristek.
